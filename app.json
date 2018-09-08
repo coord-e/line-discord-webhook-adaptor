@@ -1,0 +1,15 @@
+{
+  "name": "line-discord-webhook-adaptor",
+  "description": "An adaptor between line messaging api and discord webhook",
+  "repository": "https://github.com/coord-e/discord-link2github",
+  "env": {
+    "DISCORD_WEBHOOK_URL": {
+      "description": "Discord Webhook URL",
+      "value": ""
+    },
+    "LINE_CHANNEL_TOKEN": {
+      "description": "LINE Channel Token",
+      "value": ""
+    }
+  }
+}
