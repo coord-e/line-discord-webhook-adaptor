@@ -8,6 +8,7 @@
   "private": false,
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "got": "^9.2.1"
   }
 }
