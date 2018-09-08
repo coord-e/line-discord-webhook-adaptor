@@ -1,0 +1,9 @@
+{
+  "name": "line-discord-webhook-adaptor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/coord-e/line-discord-webhook-adaptor",
+  "author": "coord.e <me@coord-e.com>",
+  "license": "MIT",
+  "private": false
+}
