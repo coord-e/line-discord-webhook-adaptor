@@ -1,16 +1,17 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const asyncHandler = require('express-async-handler')
 const got = require('got')
 
 app.use(bodyParser.json())
 
-app.post('/', (req, res) => {
+app.post('/', asyncHandler(async (req, res) => {
   for (const event of req.body['events']) {
     console.log(event.source['userId'])
     console.log(event.message['text'])
   }
   res.status(200).end()
-})
+}))
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
