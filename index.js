@@ -22,6 +22,9 @@ const get_user_info = async (user_id) => {
 
 app.post('/', asyncHandler(async (req, res) => {
   for (const event of req.body['events']) {
+    if (event.type !== 'message') {
+      continue
+    }
     const user = event.source['userId']
     const text = event.message['text']
 
