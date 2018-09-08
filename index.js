@@ -6,15 +6,30 @@ const got = require('got')
 
 app.use(bodyParser.json())
 
+
+const get_user_info = async (user_id) => {
+  const resp = await got(`https://api.line.me/v2/bot/profile/${user_id}`, {
+    method: 'GET',
+    json: true,
+    headers: {
+      Authorization: `Bearer ${line_channel_token}`
+    }
+  })
+  return {name: resp.body.displayName, avatar: resp.body.pictureUrl}
+}
+
 app.post('/', asyncHandler(async (req, res) => {
   for (const event of req.body['events']) {
     const user = event.source['userId']
     const text = event.message['text']
+
     try {
-      await got('url', {
+      const user_info = await get_user_info(user)
+      await got(discord_webhook_url, {
         json: true,
         body: {
-          "username": user.substr(0, 32),
+          "avatar_url": user_info.avatar,
+          "username": user_info.name.substr(0, 32),
           "content": text
         }
       })
