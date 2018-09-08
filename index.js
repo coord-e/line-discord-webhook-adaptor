@@ -8,8 +8,19 @@ app.use(bodyParser.json())
 
 app.post('/', asyncHandler(async (req, res) => {
   for (const event of req.body['events']) {
-    console.log(event.source['userId'])
-    console.log(event.message['text'])
+    const user = event.source['userId']
+    const text = event.message['text']
+    try {
+      await got('url', {
+        json: true,
+        body: {
+          "username": user.substr(0, 32),
+          "content": text
+        }
+      })
+    }catch(e) {
+      console.log(e.response.body)
+    }
   }
   res.status(200).end()
 }))
