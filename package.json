@@ -6,6 +6,9 @@
   "author": "coord.e <me@coord-e.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "node index.js",
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
