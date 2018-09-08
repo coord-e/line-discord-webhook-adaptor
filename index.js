@@ -42,4 +42,4 @@ app.post('/', asyncHandler(async (req, res) => {
   res.status(200).end()
 }))
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3000, () => console.log('Listening on port 3000!'))
