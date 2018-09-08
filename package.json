@@ -5,5 +5,8 @@
   "repository": "https://github.com/coord-e/line-discord-webhook-adaptor",
   "author": "coord.e <me@coord-e.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
