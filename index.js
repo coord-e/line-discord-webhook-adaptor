@@ -6,6 +6,8 @@ const got = require('got')
 
 app.use(bodyParser.json())
 
+const discord_webhook_url = process.env.DISCORD_WEBHOOK_URL
+const line_channel_token = process.env.LINE_CHANNEL_TOKEN
 
 const get_user_info = async (user_id) => {
   const resp = await got(`https://api.line.me/v2/bot/profile/${user_id}`, {
